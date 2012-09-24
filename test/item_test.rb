@@ -5,6 +5,7 @@ require '../app/trading/user'
 class ItemTest < Test::Unit::TestCase
 
   # Fake test
+  # test
   def test_fail
     item = Trading::Item.created( "sock", "10" )
     puts item.to_s

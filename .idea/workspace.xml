@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eac6fa2-f688-433c-b42c-54c679e5d625" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/item_test.rb" afterPath="$PROJECT_DIR$/test/item_test.rb" />
     </list>
     <ignored path="ese2012_warmup.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,7 +43,7 @@
       <file leaf-file-name="item_test.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/item_test.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="18" selection-start="262" selection-end="262" vertical-scroll-proportion="0.5558583">
+            <state line="7" column="8" selection-start="142" selection-end="142" vertical-scroll-proportion="0.32425067">
               <folding />
             </state>
           </provider>
@@ -293,7 +294,11 @@
       <created>1348513868416</created>
       <updated>1348513868416</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first simple test works">
+      <created>1348513877293</created>
+      <updated>1348513877293</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -437,7 +442,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/item_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="18" selection-start="262" selection-end="262" vertical-scroll-proportion="0.5558583">
+        <state line="7" column="8" selection-start="142" selection-end="142" vertical-scroll-proportion="0.32425067">
           <folding />
         </state>
       </provider>
