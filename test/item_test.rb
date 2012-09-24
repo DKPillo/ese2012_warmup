@@ -10,4 +10,5 @@ class ItemTest < Test::Unit::TestCase
     puts item.to_s
     assert( item.to_s, "sock, 10")
   end
+
 end
