@@ -7,7 +7,7 @@ module Trading
     #An item has an owner.
 
     # generate getter and setter for name and price
-    attr_accessor :name, :price, :owner, :active
+    attr_accessor :name, :price, :active, :owner
 
     # factory method (constructor) on the class
     def self.created( name, price, owner )
