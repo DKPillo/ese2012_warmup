@@ -4,8 +4,8 @@ require '../app/trading/user'
 
 class ItemTest < Test::Unit::TestCase
 
-  # Fake test
-  def test_fail
+  # to String-Test
+  def to_string_test
     item = Trading::Item.created( "sock", "10" )
     puts item.to_s
     assert( item.to_s, "sock, 10")
