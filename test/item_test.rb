@@ -12,7 +12,7 @@ class ItemTest < Test::Unit::TestCase
     owner.create_item("testobject", 10)
     assert( owner.list_items.size == 0, "Item list length should be 0" )
     assert( owner.list_items_inactive.size == 1, "Item list inactive length should be 1" )
-    assert( owner.list_items_inactive[0].is_active? == false, "New created item should be inactive" )
+    assert( !owner.list_items_inactive[0].is_active?, "New created item should be inactive" )
     owner.list_items_inactive[0].to_active
     assert( owner.list_items.size == 1, "Item list length should be 1" )
     assert( owner.list_items_inactive.size == 0, "Item list inactive length should be 0" )
