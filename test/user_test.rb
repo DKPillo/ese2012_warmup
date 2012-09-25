@@ -80,4 +80,30 @@ class UserTest < Test::Unit::TestCase
     assert(new_owner.get_credits == 100, "Money should be like before")
   end
 
+  def test_method_list_active
+    owner = Trading::User.created( "testuser" )
+    owner.create_item("testobject", 10)
+    owner.create_item("testobject2", 50)
+    owner.list_items_inactive[0].to_active
+    owner.list_items_inactive[0].to_active
+    assert(owner.list_items[0].to_s == "testobject, 10")
+    assert(owner.list_items[1].to_s == "testobject2, 50")
+  end
+
+  def test_method_list_inactive
+    owner = Trading::User.created( "testuser" )
+    owner.create_item("testobject", 10)
+    owner.create_item("testobject2", 50)
+    assert(owner.list_items_inactive[0].to_s == "testobject, 10")
+    assert(owner.list_items_inactive[1].to_s == "testobject2, 50")
+    owner.list_items_inactive[0].to_active
+    owner.list_items_inactive[0].to_active
+    assert(owner.list_items[0].to_s == "testobject, 10")
+    assert(owner.list_items[1].to_s == "testobject2, 50")
+    owner.list_items[0].to_inactive
+    owner.list_items[0].to_inactive
+    assert(owner.list_items_inactive[0].to_s == "testobject, 10")
+    assert(owner.list_items_inactive[1].to_s == "testobject2, 50")
+  end
+
 end
