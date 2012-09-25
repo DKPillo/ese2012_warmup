@@ -68,8 +68,6 @@ module Trading
     end
 
     # buy an item
-    # TO-DO maybe we must remove the item here from the last owner.
-    # TO-DO but maybe its better to do this in a supper class.
     # @return true if user can buy item, false if his credit amount is to small
     def buy_new_item?(item_to_buy)
       if item_to_buy.get_price > self.credits
@@ -83,6 +81,7 @@ module Trading
 
     # removing item from users item_list
     def remove_item(item_to_remove)
+      self.credits = self.credits + item_to_remove.get_price
       self.item_list.delete(item_to_remove)
     end
 
