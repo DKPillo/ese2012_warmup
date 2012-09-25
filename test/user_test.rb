@@ -27,4 +27,25 @@ class UserTest < Test::Unit::TestCase
     assert( owner.to_s == "testuser has currently 100 credits, 0 active and 0 inactive items", "String representation is wrong generated")
   end
 
+  def test_sales
+    old_owner = Trading::User.created("Old")
+    new_owner = Trading::User.created("New")
+
+    sock = old_owner.create_item("sock",10)
+    assert( !sock.is_active?, "item should not be active, is")
+
+    sock.to_active
+    assert( sock.is_active?, "item should be active, is not")
+
+    if new_owner.buy_new_item?(sock)
+      old_owner.remove_item(sock)
+    end
+
+    assert(old_owner.list_items_inactive.size==0)
+    assert(new_owner.list_items_inactive.size==1)
+
+    assert( !sock.is_active?, "item should not be active, is")
+
+  end
+
 end

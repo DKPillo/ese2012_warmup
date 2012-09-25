@@ -42,6 +42,7 @@ module Trading
     def create_item(name, price)
       new_item = Trading::Item.created( name, price, self )
       self.item_list.push(new_item)
+      return new_item
     end
 
     #return users item list active
