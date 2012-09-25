@@ -57,6 +57,11 @@ module Trading
       self.price
     end
 
+    # return the owner
+    def get_owner
+      self.owner
+    end
+
   end
 
 end

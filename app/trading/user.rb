@@ -75,6 +75,7 @@ module Trading
       end
       self.credits = self.credits - item_to_buy.get_price
       item_to_buy.to_inactive
+      item_to_buy.set_owner(self)
       self.item_list.push(item_to_buy)
       return true
     end
