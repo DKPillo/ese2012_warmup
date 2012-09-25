@@ -48,4 +48,27 @@ class UserTest < Test::Unit::TestCase
 
   end
 
+  def test_sales_not_possible_because_of_price
+    old_owner = Trading::User.created("Old")
+    new_owner = Trading::User.created("New")
+
+    sock = old_owner.create_item("sock",210)
+    assert( !sock.is_active?, "item should not be active, is")
+
+    sock.to_active
+    assert( sock.is_active?, "item should be active, is not")
+
+    if new_owner.buy_new_item?(sock)
+      old_owner.remove_item(sock)
+    end
+
+    assert(old_owner.list_items_inactive.size==0)
+    assert(old_owner.list_items.size==1)
+    assert(new_owner.list_items_inactive.size==0)
+    assert(new_owner.list_items.size==0)
+
+    assert( sock.is_active?, "item should be active, is not")
+
+  end
+
 end
