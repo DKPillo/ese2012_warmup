@@ -2,6 +2,16 @@ require 'test/unit'
 require '../app/trading/item'
 require '../app/trading/user'
 
+# AK there are some additional assert methods, that produce better 
+# default messages (so you don't need to provide messages for all
+# assertions):
+# http://www.ruby-doc.org/stdlib-1.9.3/libdoc/test/unit/rdoc/Test/Unit/Assertions.html
+# examples:
+# assert_equal(left, right)
+# assert_not_nil(x)
+# assert_raise do
+#   1/0
+# end
 class ItemTest < Test::Unit::TestCase
 
   # Fake test
@@ -58,7 +68,7 @@ class ItemTest < Test::Unit::TestCase
     assert(item.get_owner == old_owner, "Owner not set correctly")
     assert(item.get_owner.get_name == "Old", "Owner not set correctly")
     old_owner.list_items_inactive[0].to_active
-    if new_owner.buy_new_item?(item)
+    if new_owner.buy_new_item?(item) # AK you should not need to use `if` in tests. Just fail if something is fishy
       old_owner.remove_item(item)
     end
     assert(item.get_owner == new_owner, "Owner not set correctly")
