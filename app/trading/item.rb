@@ -20,13 +20,13 @@ module Trading
     end
 
     # get state
-    def is_active?
+    def is_active? # AK typically, you leave away the `is_` => `def active?`
       self.active
     end
 
     # set owner
-    def set_owner(new_owner)
-      self.owner = new_owner
+    def set_owner(new_owner) # AK this is redundant: `owner=` is already a setter method
+      self.owner = new_owner # if you need to overwrite it, just use `def owner=(arg)`
     end
 
     # to String-method
